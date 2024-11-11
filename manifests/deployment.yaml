@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-dns-forwarder
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: azure-dns-forwarder
+  template:
+    metadata:
+      labels:
+        app: azure-dns-forwarder
+    spec:
+      containers:
+      - name: azure-dns-forwarder
+        image: ghcr.io/kenspur/azure-dns-forwarder:v0.1.0
+        ports:
+        - containerPort: 53
+          protocol: UDP
