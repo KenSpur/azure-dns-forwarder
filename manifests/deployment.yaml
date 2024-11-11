@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: azure-dns-forwarder
-        image: ghcr.io/kenspur/azure-dns-forwarder:v0.1.0
+        image: ghcr.io/kenspur/azure-dns-forwarder:v0.1.1
         ports:
         - containerPort: 53
           protocol: UDP
