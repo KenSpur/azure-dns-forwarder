@@ -6,6 +6,7 @@ RUN apk --no-cache add dnsmasq
 
 # Expose port 53 (DNS)
 EXPOSE 53/udp
+EXPOSE 53/tcp
 
 # Create dnsmasq config directory
 RUN mkdir -p /etc/dnsmasq.d
