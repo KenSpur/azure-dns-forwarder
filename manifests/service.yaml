@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: azure-dns-forwarder
 spec:
+  type: ClusterIP
   ports:
   - protocol: UDP
     port: 53
