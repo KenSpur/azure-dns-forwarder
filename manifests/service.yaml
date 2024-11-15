@@ -3,15 +3,17 @@ kind: Service
 metadata:
   name: azure-dns-forwarder
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
   - name: dns-udp
     protocol: UDP
     port: 53
     targetPort: 53
+    nodePort: 30053
   - name: dns-tcp
     protocol: TCP
     port: 53
     targetPort: 53
+    nodePort: 31053
   selector:
     app: azure-dns-forwarder
